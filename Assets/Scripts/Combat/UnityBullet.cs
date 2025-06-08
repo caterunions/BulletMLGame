@@ -12,6 +12,7 @@ public class UnityBullet : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector2(_bullet.X, _bullet.Y);
+        _bullet.Update();
+        transform.position = new Vector2(_bullet.X / 25, _bullet.Y / 25);
     }
 }
