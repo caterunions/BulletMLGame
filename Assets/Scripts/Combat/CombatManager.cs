@@ -1,6 +1,7 @@
 using UnityEngine;
 using BulletMLLib;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CombatManager : MonoBehaviour, IBulletManager
 {
@@ -33,9 +34,12 @@ public class CombatManager : MonoBehaviour, IBulletManager
 
 	public void ClearBullets()
 	{
-		foreach(KeyValuePair<Bullet, UnityBullet> entry in _bullets)
+		// store count before modification
+		int count = _bullets.Count;
+
+		for(int i = 0; i < count; i++)
 		{
-			RemoveBullet(entry.Key);
+			RemoveBullet(_bullets.First().Key);
 		}
 	}
 
@@ -73,7 +77,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 
 	public void RemoveBullet(Bullet deadBullet)
 	{
-		Destroy(_bullets[deadBullet]);
+		Destroy(_bullets[deadBullet].gameObject);
 		_bullets.Remove(deadBullet);
 	}
 
