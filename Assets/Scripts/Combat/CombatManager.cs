@@ -34,6 +34,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 		top.InitTopNode(Pattern.RootNode);
 
 		_topBullet.Initialize(top);
+		_topBullet.Hide();
 
 		_bullets.Add(top, _topBullet);
 	}
