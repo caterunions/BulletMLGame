@@ -28,6 +28,6 @@ public class UnityBullet : MonoBehaviour
 	{
 		_bullet.Update();
 		transform.position = new Vector2(_bullet.X, _bullet.Y);
-		transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.Direction) - 180f);
+		//transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.Direction) - 180f);
 	}
 }
