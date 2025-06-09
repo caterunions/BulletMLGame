@@ -46,7 +46,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	public void StartPattern(string path)
 	{
 		ClearBullets();
-
+		_pattern = new BulletPattern();
 		Pattern.ParseXML(path);
 
 		Bullet top = new Bullet(this);
@@ -64,6 +64,10 @@ public class CombatManager : MonoBehaviour, IBulletManager
 		Bullet bullet = new Bullet(this);
 		UnityBullet unityBullet = Instantiate(_bulletPrefab);
 		unityBullet.Initialize(bullet);
+		if(top)
+		{
+			unityBullet.Hide();
+		}
 
 		_bullets.Add(bullet, unityBullet);
 

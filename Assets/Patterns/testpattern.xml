@@ -1,29 +1,25 @@
 <?xml version="1.0" ?>
 <bulletml>
-  <action label="top">
-    <repeat>
-      <times>50</times>
-      <action>
-        <fire>
-          <bulletRef label="test"/>
-        </fire>
-        <wait>100</wait>
-      </action>
-    </repeat>
+  <action label="top1">
+    <actionRef label="testac1"/>
+  </action>
+
+  <action label="top2">
+    <actionRef label="testac2"/>
   </action>
 
   <bullet label="test">
-    <direction type="sequence">15</direction>
+    <direction type="sequence">5</direction>
     <speed>2</speed>
     <repeat>
         <times>99</times>
         <action>
-        <wait>1000</wait>
+        <wait>500</wait>
         <changeDirection>
             <direction type="relative">50</direction>
             <term>500</term>
         </changeDirection>
-        <wait>1000</wait>
+        <wait>500</wait>
         <changeDirection>
             <direction type="relative">-50</direction>
             <term>500</term>
@@ -31,4 +27,29 @@
         </action>
     </repeat>
   </bullet>
+
+  <action label="testac1">
+    <repeat>
+      <times>25</times>
+      <action>
+        <fire>
+          <bulletRef label="test"/>
+        </fire>
+      <wait>100</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <action label="testac2">
+    <repeat>
+      <times>50</times>
+      <action>
+        <fire>
+          <speed>10</speed>
+          <bulletRef label="test"/>
+        </fire>
+        <wait>500</wait>
+        </action>
+      </repeat>
+  </action>
 </bulletml>
