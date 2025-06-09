@@ -22,15 +22,31 @@ public class CombatManager : MonoBehaviour, IBulletManager
 			return _pattern;
 		}
 	}
+
 	private BulletPattern _pattern;
 
-	private void Start()
+	public void StopPattern()
 	{
-		Pattern.ParseXML("Assets/testpattern.xml");
-		Debug.Log(Pattern.RootNode);
+		ClearBullets();
+		_pattern = new BulletPattern();
+	}
+
+	public void ClearBullets()
+	{
+		foreach(KeyValuePair<Bullet, UnityBullet> entry in _bullets)
+		{
+			RemoveBullet(entry.Key);
+		}
+	}
+
+	public void StartPattern(string path)
+	{
+		ClearBullets();
+
+		Pattern.ParseXML(path);
+
 		Bullet top = new Bullet(this);
 		_topBullet = Instantiate(_bulletPrefab);
-
 		top.InitTopNode(Pattern.RootNode);
 
 		_topBullet.Initialize(top);
