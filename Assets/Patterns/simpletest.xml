@@ -2,7 +2,7 @@
 <bulletml>
   <action label="top">
     <fire>
-      <elem>Ice</elem>
+      <elem>ice</elem>
       <speed>1</speed>
       <bullet/>
     </fire>

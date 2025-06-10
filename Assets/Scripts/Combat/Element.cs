@@ -2,6 +2,12 @@ using UnityEngine;
 
 public enum ElementType
 {
-	Dark,
-	Ice
+	Neutral,
+	Physical,
+	Fire,
+	Ice,
+	Electric,
+	Wind,
+	Holy,
+	Curse
 }

@@ -63,13 +63,14 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	{
 		Bullet bullet = new Bullet(this);
 		UnityBullet unityBullet = Instantiate(_bulletPrefab);
-		unityBullet.Initialize(bullet);
 		if(top)
 		{
 			unityBullet.Hide();
 		}
 
 		_bullets.Add(bullet, unityBullet);
+
+		bullet.OnFinishSetup += InitializeUnityBullet;
 
 		return bullet;
 	}
@@ -88,5 +89,12 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	public void Trigger(Bullet source, string name)
 	{
 		throw new System.NotImplementedException();
+	}
+
+	public void InitializeUnityBullet(Bullet bullet)
+	{
+		_bullets[bullet].Initialize(bullet);
+
+		bullet.OnFinishSetup -= InitializeUnityBullet;
 	}
 }

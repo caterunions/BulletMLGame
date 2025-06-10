@@ -2,6 +2,9 @@
 <bulletml>
   <action label="top1">
     <actionRef label="testac1"/>
+    <fire>
+      <bulletRef label = "fireTest">
+    </fire>
   </action>
 
   <action label="top2">
