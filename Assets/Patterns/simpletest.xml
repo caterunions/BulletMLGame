@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<bulletml>
+  <action label="top">
+    <fire>
+      <elem>Ice</elem>
+      <speed>1</speed>
+      <bullet/>
+    </fire>
+  </action>
+</bulletml>
