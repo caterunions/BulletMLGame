@@ -9,6 +9,7 @@
   </action>
 
   <bullet label="test">
+    <elem>Ice</elem>
     <direction type="sequence">20</direction>
     <speed>2</speed>
     <repeat>
