@@ -62,6 +62,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	public Bullet CreateBullet(Bullet source, bool top)
 	{
 		Bullet bullet = new Bullet(this);
+		bullet.OnFinishSetup += InitializeUnityBullet;
 		UnityBullet unityBullet = Instantiate(_bulletPrefab);
 		unityBullet.CombatManager = this;
 		if(top)
@@ -70,8 +71,6 @@ public class CombatManager : MonoBehaviour, IBulletManager
 		}
 
 		_bullets.Add(bullet, unityBullet);
-
-		bullet.OnFinishSetup += InitializeUnityBullet;
 
 		return bullet;
 	}

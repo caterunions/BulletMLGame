@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<bulletml>
+  <action label="top">
+    <actionRef label="TLcornerBarrage"/>
+    <wait>1500</wait>
+    <actionRef label="BRcornerBarrage"/>
+    <wait>1500</wait>
+    <actionRef label="TRcornerBarrage"/>
+    <wait>1500</wait>
+    <actionRef label="BLcornerBarrage"/>
+  </action>
+
+  <bullet label="fireball">
+    <elem>fire</elem>
+    <speed>-1</speed>
+    <direction type="relative">$1</direction>
+    <action>
+        <wait>1500</wait>
+        <changeSpeed>
+            <speed>5</speed>
+            <term>1000</term>
+        </changeSpeed>
+    </action>
+  </bullet>
+
+  <action label="TLcornerBarrage">
+    <repeat>
+        <times>3</times>
+        <action>
+            <fire>
+                <offset>-9,9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>20</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>4</times>
+        <action>
+            <fire>
+                <offset>-9,9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>10</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>5</times>
+        <action>
+            <fire>
+                <offset>-9,9</offset>
+                <direction type="sequence">15</direction>
+                <bulletRef label="fireball">
+                    <param>15</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+  </action>
+
+  <action label="TRcornerBarrage">
+    <repeat>
+        <times>3</times>
+        <action>
+            <fire>
+                <offset>9,9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>-70</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>4</times>
+        <action>
+            <fire>
+                <offset>9,9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>-80</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>5</times>
+        <action>
+            <fire>
+                <offset>9,9</offset>
+                <direction type="sequence">15</direction>
+                <bulletRef label="fireball">
+                    <param>-75</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+  </action>
+
+  <action label="BLcornerBarrage">
+    <repeat>
+        <times>3</times>
+        <action>
+            <fire>
+                <offset>-9,-9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>110</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>4</times>
+        <action>
+            <fire>
+                <offset>-9,-9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>100</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>5</times>
+        <action>
+            <fire>
+                <offset>-9,-9</offset>
+                <direction type="sequence">15</direction>
+                <bulletRef label="fireball">
+                    <param>105</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+  </action>
+
+  <action label="BRcornerBarrage">
+    <repeat>
+        <times>3</times>
+        <action>
+            <fire>
+                <offset>9,-9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>-160</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>4</times>
+        <action>
+            <fire>
+                <offset>9,-9</offset>
+                <direction type="sequence">25</direction>
+                <bulletRef label="fireball">
+                    <param>-170</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+    <wait>500</wait>
+    <repeat>
+        <times>5</times>
+        <action>
+            <fire>
+                <offset>9,-9</offset>
+                <direction type="sequence">15</direction>
+                <bulletRef label="fireball">
+                    <param>-165</param>
+                </bulletRef>
+            </fire>
+        </action>
+    </repeat>
+  </action>
+</bulletml>

@@ -33,18 +33,19 @@ public class UnityBullet : MonoBehaviour
 	{
 		_bullet = bullet;
 
-		// no visuals for top
-		if (_top) return;
-
 		_lifetime = _bullet.Lifetime / 1000;
-		if(_lifetime == 0)
+		if (_lifetime == 0)
 		{
 			_lifetime = float.MaxValue;
 		}
 
-		_spriteRenderer.enabled = true;
-		ElementType = _bullet.ElementType;
-		SetElementMaterial();
+		// no visuals for top
+		if (!_top)
+		{
+			_spriteRenderer.enabled = true;
+			ElementType = _bullet.ElementType;
+			SetElementMaterial();
+		}
 	}
 
 	private void SetElementMaterial()

@@ -1,7 +1,8 @@
 <?xml version="1.0" ?>
 <bulletml>
   <action label="top1">
-    <actionRef label="testac1"/>
+    <actionRef label="testac3"/>
+    <actionRef label="testac2"/>
   </action>
 
   <action label="top2">
@@ -12,7 +13,7 @@
     <elem>ice</elem>
     <direction type="sequence">20</direction>
     <speed>2</speed>
-    <lifetime>1000</lifetime>
+    <lifetime>3000</lifetime>
     <repeat>
         <times>99</times>
         <action>
@@ -33,7 +34,9 @@
   <bullet label="fireTest">
     <elem>fire</elem>
     <direction type="sequence">20</direction>
+    <offset>5,0</offset>
     <speed>2</speed>
+    <lifetime>2000</lifetime>
     <repeat>
         <times>99</times>
         <action>
@@ -49,6 +52,10 @@
         </changeDirection>
         </action>
     </repeat>
+    <fire>
+      <offset>0,3</offset>
+      <bulletRef label="iceTest"/>
+    </fire>
   </bullet>
 
   <action label="testac1">
@@ -56,9 +63,22 @@
       <times>25</times>
       <action>
         <fire>
-          <bulletRef label="iceTest"/>
+          <bulletRef label="fireTest"/>
         </fire>
       <wait>100</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <action label="testac3">
+    <repeat>
+      <times>25</times>
+      <action>
+        <fire>
+          <offset>1,1</offset>
+          <bulletRef label="fireTest"/>
+        </fire>
+      <wait>1000</wait>
       </action>
     </repeat>
   </action>
@@ -69,7 +89,7 @@
       <action>
         <fire>
           <speed>10</speed>
-          <bulletRef label="fireTest"/>
+          <bulletRef label="iceTest"/>
         </fire>
         <wait>500</wait>
         </action>

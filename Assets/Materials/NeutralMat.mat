@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CosmicMat
+  m_Name: NeutralMat
   m_Shader: {fileID: -6465566751694194690, guid: 6c2ccd182f64aa24699b2e3c5fb4fbc7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -61,7 +61,7 @@ Material:
     - CORNERS: 1
     - _EnableExternalAlpha: 0
     - _GridSize: 3
-    - _OutlineThickness: 0.2
+    - _OutlineThickness: 0.3
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
