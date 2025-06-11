@@ -12,6 +12,7 @@
     <elem>ice</elem>
     <direction type="sequence">20</direction>
     <speed>2</speed>
+    <lifetime>1000</lifetime>
     <repeat>
         <times>99</times>
         <action>

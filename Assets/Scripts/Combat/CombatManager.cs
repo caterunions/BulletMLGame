@@ -63,6 +63,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	{
 		Bullet bullet = new Bullet(this);
 		UnityBullet unityBullet = Instantiate(_bulletPrefab);
+		unityBullet.CombatManager = this;
 		if(top)
 		{
 			unityBullet.Hide();

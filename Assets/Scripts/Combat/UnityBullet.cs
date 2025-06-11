@@ -4,13 +4,15 @@ using BulletMLLib;
 public class UnityBullet : MonoBehaviour
 {
 	private Bullet _bullet;
+	public CombatManager CombatManager { get; set; }
 
 	public ElementType ElementType { get; private set; }
 
 	[SerializeField]
 	private SpriteRenderer _spriteRenderer;
 
-	private bool top = false;
+	private bool _top = false;
+	private float _lifetime = 0;
 
 	[SerializeField]
 	private Material _neutralMaterial;
@@ -32,12 +34,16 @@ public class UnityBullet : MonoBehaviour
 		_bullet = bullet;
 
 		// no visuals for top
-		if (top) return;
+		if (_top) return;
+
+		_lifetime = _bullet.Lifetime / 1000;
+		if(_lifetime == 0)
+		{
+			_lifetime = float.MaxValue;
+		}
 
 		_spriteRenderer.enabled = true;
-
 		ElementType = _bullet.ElementType;
-
 		SetElementMaterial();
 	}
 
@@ -85,7 +91,7 @@ public class UnityBullet : MonoBehaviour
 	public void Hide()
 	{
 		_spriteRenderer.enabled = false;
-		top = true;
+		_top = true;
 	}
 
 	private void Awake()
@@ -97,6 +103,11 @@ public class UnityBullet : MonoBehaviour
 	{
 		_bullet.Update();
 		transform.position = new Vector2(_bullet.X, _bullet.Y);
+		_lifetime -= Time.deltaTime;
+		if(_lifetime <= 0)
+		{
+			CombatManager.RemoveBullet(_bullet);
+		}
 		//transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.Direction) - 180f);
 	}
 }
