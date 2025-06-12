@@ -42,6 +42,7 @@ public class UnityBullet : MonoBehaviour
 		// no visuals for top
 		if (!_top)
 		{
+			transform.position = new Vector2(_bullet.X, _bullet.Y);
 			_spriteRenderer.enabled = true;
 			ElementType = _bullet.ElementType;
 			SetElementMaterial();
