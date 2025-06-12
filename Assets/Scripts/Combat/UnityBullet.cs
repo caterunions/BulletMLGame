@@ -16,6 +16,7 @@ public class UnityBullet : MonoBehaviour
 	public void Initialize(Bullet bullet)
 	{
 		_bullet = bullet;
+		_top = bullet.Top;
 
 		_lifetime = _bullet.Lifetime / 1000;
 		if (_lifetime == 0)
@@ -30,15 +31,25 @@ public class UnityBullet : MonoBehaviour
 	private void Update()
 	{
 		_bullet.Update();
+
+		// top bullet only needs update
+		if (_top) return;
+
 		transform.position = new Vector2(_bullet.X, _bullet.Y);
 		_lifetime -= Time.deltaTime;
-		if(_lifetime <= 0)
+		if (_lifetime <= 0)
 		{
 			CombatManager.RemoveBullet(_bullet);
 		}
+
 		if(_bullet.FaceDirection)
 		{
 			Visuals.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.Direction) - 180f);
+		}
+		else if (_bullet.ContinousRotation <= 1 || _bullet.ContinousRotation >= -1)
+		{
+			float rot = _bullet.ContinousRotation * Time.deltaTime;
+			Visuals.transform.rotation = Quaternion.Euler(0, 0, Visuals.transform.rotation.eulerAngles.z + rot);
 		}
 	}
 }

@@ -100,7 +100,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 
 		if(!bullet.Top)
 		{
-			BulletVisuals vis = Instantiate(_battleData.GetVisuals(""), uBullet.transform);
+			BulletVisuals vis = Instantiate(_battleData.GetVisuals(bullet.Visuals), uBullet.transform);
 			uBullet.Visuals = vis;
 			vis.SpriteRenderer.material = _materialBank.GetElementMaterial(bullet.ElementType);
 		}

@@ -14,6 +14,7 @@
     <elem>fire</elem>
     <speed>-1</speed>
     <faceHeading/>
+    <visuals>knife</visuals>
     <lifetime>5000</lifetime>
     <direction type="relative">$1</direction>
     <action>
