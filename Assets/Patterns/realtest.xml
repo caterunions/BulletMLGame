@@ -13,11 +13,12 @@
   <bullet label="fireball">
     <elem>fire</elem>
     <speed>-1</speed>
+    <lifetime>10000</lifetime>
     <direction type="relative">$1</direction>
     <action>
         <wait>1500</wait>
         <changeSpeed>
-            <speed>5</speed>
+            <speed>9</speed>
             <term>1000</term>
         </changeSpeed>
     </action>
