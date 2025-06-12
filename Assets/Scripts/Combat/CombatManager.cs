@@ -24,6 +24,12 @@ public class CombatManager : MonoBehaviour, IBulletManager
 		}
 	}
 
+	[SerializeField]
+	private BattleData _battleData;
+
+	[SerializeField]
+	private MaterialBank _materialBank;
+
 	private BulletPattern _pattern;
 
 	public void StopPattern()
@@ -49,26 +55,21 @@ public class CombatManager : MonoBehaviour, IBulletManager
 		_pattern = new BulletPattern();
 		Pattern.ParseXML(path);
 
-		Bullet top = new Bullet(this);
+		Bullet top = new Bullet(this, true);
 		_topBullet = Instantiate(_bulletPrefab);
 		top.InitTopNode(Pattern.RootNode);
 
 		_topBullet.Initialize(top);
-		_topBullet.Hide();
 
 		_bullets.Add(top, _topBullet);
 	}
 
 	public Bullet CreateBullet(Bullet source, bool top)
 	{
-		Bullet bullet = new Bullet(this);
+		Bullet bullet = new Bullet(this, top);
 		bullet.OnFinishSetup += InitializeUnityBullet;
 		UnityBullet unityBullet = Instantiate(_bulletPrefab);
 		unityBullet.CombatManager = this;
-		if(top)
-		{
-			unityBullet.Hide();
-		}
 
 		_bullets.Add(bullet, unityBullet);
 
@@ -93,7 +94,16 @@ public class CombatManager : MonoBehaviour, IBulletManager
 
 	public void InitializeUnityBullet(Bullet bullet)
 	{
-		_bullets[bullet].Initialize(bullet);
+		UnityBullet uBullet = _bullets[bullet];
+
+		uBullet.Initialize(bullet);
+
+		if(!bullet.Top)
+		{
+			BulletVisuals vis = Instantiate(_battleData.GetVisuals(""), uBullet.transform);
+			uBullet.Visuals = vis;
+			vis.SpriteRenderer.material = _materialBank.GetElementMaterial(bullet.ElementType);
+		}
 
 		bullet.OnFinishSetup -= InitializeUnityBullet;
 	}

@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4085d76c70e0d4e908a64280c113bc, type: 3}
   m_Name: TestData
   m_EditorClassIdentifier: 
-  _bulletBank: []
+  _errorFallbackVisuals: {fileID: 8879595191080337317, guid: 2418fd49b79329e478f9b22ded4ac922, type: 3}
+  _bulletBank:
+  - {fileID: 8879595191080337317, guid: 4ae23244ddc9c114dbd3d04928e1f443, type: 3}
+  - {fileID: 8879595191080337317, guid: f92f60beb97c62f4b892bc4ee2c0383e, type: 3}
+  - {fileID: 8879595191080337317, guid: 3e573c0d43035bb46b4af947d4b818a1, type: 3}
+  - {fileID: 8879595191080337317, guid: 50502b69a5a9434448fce66ad8ebd1ca, type: 3}
+  - {fileID: 8879595191080337317, guid: fdf2d32361b2cf642988f5ea37df230c, type: 3}
+  - {fileID: 8879595191080337317, guid: ff5c49ddb8870ff47ac2211239071ef3, type: 3}
+  - {fileID: 8879595191080337317, guid: 493d2c0560bd0714e87107ed3a775373, type: 3}

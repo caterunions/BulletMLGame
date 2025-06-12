@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a62a1d5fd8882d4e92c336ebdfc9ea2, type: 3}
+  m_Name: LowVisMaterialBank
+  m_EditorClassIdentifier: 
+  _neutralMaterial: {fileID: 2100000, guid: 23e29945fa20b8740ae757638a078c30, type: 2}
+  _physMaterial: {fileID: 2100000, guid: 983038927daf5f74085c9698907ad5d4, type: 2}
+  _fireMaterial: {fileID: 2100000, guid: 8633a61f7d9a4b84ab327607bcfe355d, type: 2}
+  _iceMaterial: {fileID: 2100000, guid: cf4634a1e9bfd3246b030861bd06b6fe, type: 2}
+  _elecMaterial: {fileID: 2100000, guid: 89ebbc429c8226e4e856535be307c304, type: 2}
+  _windMaterial: {fileID: 2100000, guid: 8307741f3623ef146b590f6e3f3c979b, type: 2}
+  _blessMaterial: {fileID: 2100000, guid: b6552187a85bd3049bbfc8bfed48dfc4, type: 2}
+  _curseMaterial: {fileID: 2100000, guid: d79abe9e2db51b441b961369a83896a8, type: 2}

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NeutralMat
-  m_Shader: {fileID: -6465566751694194690, guid: 6c2ccd182f64aa24699b2e3c5fb4fbc7, type: 3}
+  m_Name: SimpleNeutralMat
+  m_Shader: {fileID: -6465566751694194690, guid: 59105c63e0cd48f4091cb9022981d207, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -65,6 +65,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FillColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScrollSpeed: {r: 0, g: 0, b: 0, a: 0}

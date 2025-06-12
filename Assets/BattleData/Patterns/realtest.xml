@@ -13,6 +13,7 @@
   <bullet label="fireball">
     <elem>fire</elem>
     <speed>-1</speed>
+    <faceHeading/>
     <lifetime>5000</lifetime>
     <direction type="relative">$1</direction>
     <action>

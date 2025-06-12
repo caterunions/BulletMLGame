@@ -8,6 +8,6 @@ public enum ElementType
 	Ice,
 	Electric,
 	Wind,
-	Holy,
+	Bless,
 	Curse
 }

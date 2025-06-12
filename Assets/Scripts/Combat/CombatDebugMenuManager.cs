@@ -69,7 +69,7 @@ public class CombatDebugMenuManager : MonoBehaviour
 
 		AssetDatabase.Refresh();
 
-		string[] files = Directory.GetFiles("Assets/Patterns");
+		string[] files = Directory.GetFiles("Assets/BattleData/Patterns");
 
 		_xmlPatterns = files.Where(s => s.Substring(s.Length - 3) == "xml").ToArray();
 		_sortedPatterns = _xmlPatterns;
@@ -91,7 +91,7 @@ public class CombatDebugMenuManager : MonoBehaviour
 	{
 		_fileDropdown.Hide();
 
-		_selectedFile = "Assets/Patterns/" + _fileDropdown.options[choice].text;
+		_selectedFile = "Assets/BattleData/Patterns/" + _fileDropdown.options[choice].text;
 		_searchField.text = _fileDropdown.options[choice].text;
 	}
 
@@ -102,7 +102,7 @@ public class CombatDebugMenuManager : MonoBehaviour
 
 		foreach(string xml in  _sortedPatterns.Take(5))
 		{
-			TMP_Dropdown.OptionData data = new TMP_Dropdown.OptionData(xml.Substring(16));
+			TMP_Dropdown.OptionData data = new TMP_Dropdown.OptionData(xml.Substring(27));
 			newOptions.Add(data);
 		}
 

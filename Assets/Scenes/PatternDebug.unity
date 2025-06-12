@@ -1090,6 +1090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 8527563602921285756, guid: 89dded279554ca7489d35b1487825d2c, type: 3}
+  _battleData: {fileID: 11400000, guid: c9c7092057e4dda4980c87daa1cc270f, type: 2}
+  _materialBank: {fileID: 11400000, guid: 01d0faf73b761b344a9133d9a9842b7f, type: 2}
 --- !u!4 &680231816
 Transform:
   m_ObjectHideFlags: 0
