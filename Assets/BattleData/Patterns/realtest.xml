@@ -20,11 +20,50 @@
     <action>
         <wait>1500</wait>
         <changeSpeed>
-            <speed>10</speed>
+            <speed>15</speed>
             <term>1000</term>
         </changeSpeed>
+        <wait>1000</wait>
+        <fire>
+            <bulletRef label="swoop1"/>
+        </fire>
+        <fire>
+            <bulletRef label="swoop2"/>
+        </fire>
+        <vanish/>
     </action>
   </bullet>
+
+  <bullet label="swoop1">
+    <elem>curse</elem>
+    <speed>10</speed>
+    <faceHeading/>
+    <visuals>swoop</visuals>
+    <lifetime>2500</lifetime>
+    <direction type="relative">30</direction>
+    <actionRef label="changeDir">
+        <param>90</param>
+    </actionRef>
+  </bullet>
+
+  <bullet label="swoop2">
+    <elem>ice</elem>
+    <speed>10</speed>
+    <faceHeading/>
+    <visuals>swoop</visuals>
+    <lifetime>2500</lifetime>
+    <direction type="relative">-30</direction>
+    <actionRef label="changeDir">
+        <param>-90</param>
+    </actionRef>
+  </bullet>
+
+  <action label="changeDir">
+    <changeDirection>
+        <direction type="relative">$1</direction>
+        <term>1500</term>
+    </changeDirection>
+  </action>
 
   <action label="TLcornerBarrage">
     <repeat>
