@@ -1,10 +1,35 @@
 <?xml version="1.0" ?>
 <bulletml>
   <action label="top">
+    <repeat>
+      <times>99</times>
+      <action>
+        <actionRef label="testAction"/>
+        <wait>500</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <bullet label="test">
+    <faceHeading/>
+    <visuals>knife</visuals>
+    <speed>6</speed>
+    <sine>
+      <frequency>-2</frequency>
+      <amplitude>2</amplitude>
+    </sine>
+  </bullet>
+
+  <bullet label="other">
+    <visuals>swoop</visuals>
+    <faceHeading/>
+    <speed>2</speed>
+    <direction type="aim">0</direction>
+  </bullet>
+
+  <action label="testAction">
     <fire>
-      <elem>ice</elem>
-      <speed>1</speed>
-      <bullet/>
+      <bulletRef label="test"/>
     </fire>
   </action>
 </bulletml>

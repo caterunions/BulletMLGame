@@ -44,7 +44,7 @@ public class UnityBullet : MonoBehaviour
 
 		if(_bullet.FaceDirection)
 		{
-			Visuals.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.Direction) - 180f);
+			Visuals.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.VisualDirection) - 180f);
 		}
 		else if (_bullet.ContinousRotation <= 1 || _bullet.ContinousRotation >= -1)
 		{
