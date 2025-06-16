@@ -1,4 +1,80 @@
 <?xml version="1.0" ?>
 <bulletml>
-  
+  <action label="top">
+    <repeat>
+        <times>15</times>
+        <action>
+            <fire>
+                <offset>0,9</offset>
+                <direction type="aim">0</direction>
+                <bulletRef label="knifeMid"/>
+            </fire>
+            <fire>
+                <offset>0,9</offset>
+                <direction type="aim">-30</direction>
+                <bulletRef label="knifeL"/>
+            </fire>
+            <fire>
+                <offset>0,9</offset>
+                <direction type="aim">30</direction>
+                <bulletRef label="knifeR"/>
+            </fire>
+            <wait>1000</wait>
+        </action>
+    </repeat>
+  </action>
+
+  <bullet label="knifeMid">
+    <elem>neutral</elem>
+    <speed>0</speed>
+    <visuals>knife</visuals>
+    <faceHeading/>
+    <action>
+        <changeDirection>
+            <direction type="aim">0</direction>
+            <term>1500</term>
+        </changeDirection>
+        <wait>1500</wait>
+        <changeSpeed>
+            <speed>25</speed>
+            <term>100</term>
+        </changeSpeed>
+    </action>
+  </bullet>
+
+  <bullet label="knifeL">
+    <elem>neutral</elem>
+    <speed>0</speed>
+    <visuals>knife</visuals>
+    <faceHeading/>
+    <action>
+        <changeDirection>
+            <direction type="aim">-15</direction>
+            <term>1500</term>
+        </changeDirection>
+        <wait>1500</wait>
+        <changeSpeed>
+            <speed>25</speed>
+            <term>100</term>
+        </changeSpeed>
+    </action>
+  </bullet>
+
+  <bullet label="knifeR">
+    <elem>neutral</elem>
+    <speed>0</speed>
+    <visuals>knife</visuals>
+    <faceHeading/>
+    <action>
+        <changeDirection>
+            <direction type="aim">15</direction>
+            <term>1500</term>
+        </changeDirection>
+        <wait>1500</wait>
+        <changeSpeed>
+            <speed>25</speed>
+            <term>100</term>
+        </changeSpeed>
+    </action>
+  </bullet>
 </bulletml>

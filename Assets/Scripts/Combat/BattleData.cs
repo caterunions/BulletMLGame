@@ -34,6 +34,10 @@ public class AttackData
 	public TextAsset XmlPattern => _xmlPattern;
 
 	[SerializeField]
+	private CombatArena _arena;
+	public CombatArena Arena => _arena;
+
+	[SerializeField]
 	private AttackType _attackType;
 	public AttackType AttackType => _attackType;
 

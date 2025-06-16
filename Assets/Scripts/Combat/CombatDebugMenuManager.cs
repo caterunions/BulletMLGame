@@ -75,6 +75,8 @@ public class CombatDebugMenuManager : MonoBehaviour
 		_sortedPatterns = _xmlPatterns;
 		_selectedFile = "";
 
+		_searchField.ReleaseSelection();
+
 		UpdateDropdown();
 	}
 

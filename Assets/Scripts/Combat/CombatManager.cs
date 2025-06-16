@@ -30,6 +30,9 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	[SerializeField]
 	private MaterialBank _materialBank;
 
+	[SerializeField]
+	private GameObject _combatPlayer;
+
 	private BulletPattern _pattern;
 
 	public void StopPattern()
@@ -78,7 +81,7 @@ public class CombatManager : MonoBehaviour, IBulletManager
 
 	public Vector2 PlayerPosition(Bullet targettedBullet)
 	{
-		return Vector2.zero;
+		return _combatPlayer.transform.position;
 	}
 
 	public void RemoveBullet(Bullet deadBullet)
