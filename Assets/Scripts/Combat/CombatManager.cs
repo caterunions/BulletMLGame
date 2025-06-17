@@ -5,6 +5,8 @@ using System.Linq;
 
 public class CombatManager : MonoBehaviour, IBulletManager
 {
+	public static CombatManager Instance { get; private set; }
+
 	[SerializeField]
 	private UnityBullet _bulletPrefab;
 
@@ -34,6 +36,12 @@ public class CombatManager : MonoBehaviour, IBulletManager
 	private GameObject _combatPlayer;
 
 	private BulletPattern _pattern;
+
+	private void OnEnable()
+	{
+		//IMSORRY yucky singleton but needed for equations :/
+		Instance = this;
+	}
 
 	public void StopPattern()
 	{

@@ -4,8 +4,10 @@
     <repeat>
       <times>99</times>
       <action>
-        <actionRef label="testAction"/>
-        <wait>500</wait>
+        <actionRef label="testAction">
+          <param>$rand * 10</param>
+        </actionRef>
+        <wait>1000</wait>
       </action>
     </repeat>
   </action>
@@ -13,22 +15,18 @@
   <bullet label="test">
     <faceHeading/>
     <visuals>knife</visuals>
-    <speed>6</speed>
+    <speed>5</speed>
     <sine>
-      <frequency>-2</frequency>
-      <amplitude>2</amplitude>
+      <frequency>1</frequency>
+      <amplitude>1</amplitude>
     </sine>
-  </bullet>
-
-  <bullet label="other">
-    <visuals>swoop</visuals>
-    <faceHeading/>
-    <speed>2</speed>
-    <direction type="aim">0</direction>
   </bullet>
 
   <action label="testAction">
     <fire>
+      <direction type="aim">0</direction>
+      <offsetX>$rRng * 9</offsetX>
+      <offsetY>$rRng * 9</offsetY>
       <bulletRef label="test"/>
     </fire>
   </action>
