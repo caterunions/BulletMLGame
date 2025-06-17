@@ -14,7 +14,9 @@
         <speed>0</speed>
       </changeSpeed>
       <rotate>
-        <rotRate>90</rotRate>
+        <rotRate>360</rotRate>
+        <originX>2</originX>
+        <originY>2</originY>
       </rotate>
       <wait>1000</wait>
       <rotate>
@@ -25,7 +27,7 @@
 
   <action label="testac1">
     <repeat>
-      <times>25</times>
+      <times>1</times>
       <action>
         <fire>
           <bulletRef label="test"/>
