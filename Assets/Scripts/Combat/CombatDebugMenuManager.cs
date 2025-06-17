@@ -27,6 +27,12 @@ public class CombatDebugMenuManager : MonoBehaviour
 	[SerializeField]
 	private CombatManager _combatManager;
 
+	[SerializeField]
+	private TextMeshProUGUI _label;
+
+	[SerializeField]
+	private TextMeshProUGUI _fileDisplay;
+
 	private string[] _xmlPatterns = new string[0];
 
 	private string[] _sortedPatterns = new string[0];
@@ -73,9 +79,6 @@ public class CombatDebugMenuManager : MonoBehaviour
 
 		_xmlPatterns = files.Where(s => s.Substring(s.Length - 3) == "xml").ToArray();
 		_sortedPatterns = _xmlPatterns;
-		_selectedFile = "";
-
-		_searchField.ReleaseSelection();
 
 		UpdateDropdown();
 	}
@@ -86,6 +89,9 @@ public class CombatDebugMenuManager : MonoBehaviour
 		_sortedPatterns = _xmlPatterns.Where(x => x.Contains(value)).OrderBy(x => x.IndexOf(value)).ToArray();
 
 		UpdateDropdown();
+
+		_selectedFile = "Assets/BattleData/Patterns/" + _label.text;
+		_fileDisplay.text = $"Loaded File: {_selectedFile}";
 	}
 
 	// dropdown clicked
@@ -93,8 +99,7 @@ public class CombatDebugMenuManager : MonoBehaviour
 	{
 		_fileDropdown.Hide();
 
-		_selectedFile = "Assets/BattleData/Patterns/" + _fileDropdown.options[choice].text;
-		_searchField.text = _fileDropdown.options[choice].text;
+		
 	}
 
 	// display sorted files
@@ -102,13 +107,14 @@ public class CombatDebugMenuManager : MonoBehaviour
 	{
 		List<TMP_Dropdown.OptionData> newOptions = new List<TMP_Dropdown.OptionData>();
 
-		foreach(string xml in  _sortedPatterns.Take(5))
+		foreach(string xml in  _sortedPatterns)
 		{
 			TMP_Dropdown.OptionData data = new TMP_Dropdown.OptionData(xml.Substring(27));
 			newOptions.Add(data);
 		}
 
 		_fileDropdown.options = newOptions;
+		_fileDropdown.RefreshShownValue();
 		_fileDropdown.Show();
 	}
 }
