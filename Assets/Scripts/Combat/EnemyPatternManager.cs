@@ -10,8 +10,6 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 	[SerializeField]
 	private UnityBullet _bulletPrefab;
 
-	private UnityBullet _topBullet;
-
 	private Dictionary<Bullet, UnityBullet> _bullets = new Dictionary<Bullet, UnityBullet>();
 
 	private BulletPattern Pattern
@@ -26,13 +24,10 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 		}
 	}
 
-	[SerializeField]
 	private BattleData _battleData;
 
-	[SerializeField]
 	private MaterialBank _materialBank;
 
-	[SerializeField]
 	private GameObject _combatPlayer;
 
 	private BulletPattern _pattern;
@@ -41,6 +36,13 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 	{
 		//IMSORRY yucky singleton but needed for equations :/
 		Instance = this;
+	}
+
+	public void Initialize(BattleData battleData, MaterialBank matBank, GameObject combatPlayer)
+	{
+		_battleData = battleData;
+		_materialBank = matBank;
+		_combatPlayer = combatPlayer;
 	}
 
 	public void StopPattern()
@@ -67,12 +69,12 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 		Pattern.ParseXML(path);
 
 		Bullet top = new Bullet(this, true);
-		_topBullet = Instantiate(_bulletPrefab);
+		UnityBullet topBullet = Instantiate(_bulletPrefab);
 		top.InitTopNode(Pattern.RootNode);
 
-		_topBullet.Initialize(top);
+		topBullet.Initialize(top);
 
-		_bullets.Add(top, _topBullet);
+		_bullets.Add(top, topBullet);
 	}
 
 	public Bullet CreateBullet(Bullet source, bool top)

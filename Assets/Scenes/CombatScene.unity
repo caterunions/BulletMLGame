@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &954357255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954357257}
+  - component: {fileID: 954357256}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &954357256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954357255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19eb42760a4875499a3bd5181440119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _battleData: {fileID: 11400000, guid: c9c7092057e4dda4980c87daa1cc270f, type: 2}
+  _materialBank: {fileID: 11400000, guid: 01d0faf73b761b344a9133d9a9842b7f, type: 2}
+  _combatPlayer: {fileID: 1573265916}
+  _enemyPatternManager: {fileID: 1546661102}
+--- !u!4 &954357257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954357255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166529366
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +315,7 @@ GameObject:
   - component: {fileID: 1546661103}
   - component: {fileID: 1546661102}
   m_Layer: 0
-  m_Name: CombatManager
+  m_Name: EnemyPatternManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,9 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 8527563602921285756, guid: 89dded279554ca7489d35b1487825d2c, type: 3}
-  _battleData: {fileID: 11400000, guid: c9c7092057e4dda4980c87daa1cc270f, type: 2}
-  _materialBank: {fileID: 11400000, guid: 01d0faf73b761b344a9133d9a9842b7f, type: 2}
-  _combatPlayer: {fileID: 1573265916}
 --- !u!4 &1546661103
 Transform:
   m_ObjectHideFlags: 0
@@ -373,3 +418,4 @@ SceneRoots:
   - {fileID: 1166529369}
   - {fileID: 1546661103}
   - {fileID: 1573265915}
+  - {fileID: 954357257}
