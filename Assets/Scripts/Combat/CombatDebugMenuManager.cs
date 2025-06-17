@@ -25,7 +25,7 @@ public class CombatDebugMenuManager : MonoBehaviour
 	private Button _refreshButton;
 
 	[SerializeField]
-	private CombatManager _combatManager;
+	private EnemyPatternManager _combatManager;
 
 	[SerializeField]
 	private TextMeshProUGUI _label;

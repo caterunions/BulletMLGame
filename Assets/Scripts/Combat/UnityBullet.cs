@@ -4,7 +4,7 @@ using BulletMLLib;
 public class UnityBullet : MonoBehaviour
 {
 	private Bullet _bullet;
-	public CombatManager CombatManager { get; set; }
+	public EnemyPatternManager CombatManager { get; set; }
 
 	public ElementType ElementType { get; private set; }
 

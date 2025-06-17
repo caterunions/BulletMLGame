@@ -3,9 +3,9 @@ using BulletMLLib;
 using System.Collections.Generic;
 using System.Linq;
 
-public class CombatManager : MonoBehaviour, IBulletManager
+public class EnemyPatternManager : MonoBehaviour, IBulletManager
 {
-	public static CombatManager Instance { get; private set; }
+	public static EnemyPatternManager Instance { get; private set; }
 
 	[SerializeField]
 	private UnityBullet _bulletPrefab;
