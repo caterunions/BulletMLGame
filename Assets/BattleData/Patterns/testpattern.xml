@@ -4,28 +4,23 @@
     <actionRef label="testac1"/>
   </action>
 
-  <action label="top2">
-    <actionRef label="testac2"/>
-  </action>
-
   <bullet label="test">
-    <direction type="sequence">20</direction>
+    <direction type="absolute">0</direction>
     <speed>2</speed>
-    <repeat>
-        <times>99</times>
-        <action>
-        <wait>500</wait>
-        <changeDirection>
-            <direction type="relative">50</direction>
-            <term>500</term>
-        </changeDirection>
-        <wait>500</wait>
-        <changeDirection>
-            <direction type="relative">-50</direction>
-            <term>500</term>
-        </changeDirection>
-        </action>
-    </repeat>
+    <faceHeading/>
+    <action>
+      <wait>1500</wait>
+      <changeSpeed>
+        <speed>0</speed>
+      </changeSpeed>
+      <rotate>
+        <rotRate>90</rotRate>
+      </rotate>
+      <wait>1000</wait>
+      <rotate>
+        <rotRate>0</rotRate>
+      </rotate>
+    </action>
   </bullet>
 
   <action label="testac1">
