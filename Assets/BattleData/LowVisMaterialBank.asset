@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a62a1d5fd8882d4e92c336ebdfc9ea2, type: 3}
   m_Name: LowVisMaterialBank
   m_EditorClassIdentifier: 
-  _neutralMaterial: {fileID: 2100000, guid: 23e29945fa20b8740ae757638a078c30, type: 2}
+  _neutralMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _physMaterial: {fileID: 2100000, guid: 983038927daf5f74085c9698907ad5d4, type: 2}
   _fireMaterial: {fileID: 2100000, guid: 8633a61f7d9a4b84ab327607bcfe355d, type: 2}
   _iceMaterial: {fileID: 2100000, guid: cf4634a1e9bfd3246b030861bd06b6fe, type: 2}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1979388552680490487}
   m_Layer: 0
   m_Name: CombatPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7950016285490487488}
-  _moveSpeed: 7.5
+  _moveSpeed: 9
 --- !u!50 &7950016285490487488
 Rigidbody2D:
   serializedVersion: 5
@@ -157,7 +157,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.45
 --- !u!1 &3661770376117285433
 GameObject:
   m_ObjectHideFlags: 0
