@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<bulletml>
+  <action label="top1">
+    <actionRef label="createwall"/>
+  </action>
+
+  <bullet label="test">
+    <direction type="absolute">0</direction>
+    <speed>2</speed>
+    <faceHeading/>
+    <action>
+      <wait>1500</wait>
+      <changeSpeed>
+        <speed>0</speed>
+      </changeSpeed>
+      <rotate>
+        <rotRate>360</rotRate>
+        <originX>2</originX>
+        <originY>2</originY>
+      </rotate>
+      <wait>1000</wait>
+      <rotate>
+        <rotRate>0</rotRate>
+      </rotate>
+    </action>
+  </bullet>
+
+  <bullet label="knifetop">
+    <visuals>knife</visuals>
+    <speed>25</speed>
+    <direction type="absolute">-90</direction>
+    <offsetY type="relative">3</offsetY>
+  </bullet>
+
+  <bullet label="knifebottom">
+    <visuals>knife</visuals>
+    <speed>25</speed>
+    <direction type="absolute">-90</direction>
+    <offsetY type="relative">-3</offsetY>
+  </bullet>
+
+  <bullet label="wallsegment">
+    <action>
+      <fire>
+        <bulletRef label="knifetop"></bulletRef>
+      </fire>
+      <fire>
+        <bulletRef label="knifebottom"></bulletRef>
+      </fire>
+      <vanish/>
+    </action>
+  </bullet>
+
+  <bullet label="wallspawner">
+    <offsetX>20</offsetX>
+    <direction type="absolute">-90</direction>
+    <sine>
+      <frequency>0.5</frequency>
+      <amplitude>3</amplitude>
+    </sine>
+    <action>
+      <accel>
+        <vertical>-1</vertical>
+        <term>5000</term>
+      </accel>
+    </action>
+    <repeat>
+      <times>50</times>
+      <action>
+        <fire>
+          <bulletRef label="wallsegment"></bulletRef>
+        </fire>
+        <wait>100</wait>
+      </action>
+    </repeat>
+    <action>
+      <accel>
+        <vertical>3</vertical>
+        <term>5000</term>
+      </accel>
+    </action>
+    <repeat>
+      <times>50</times>
+      <action>
+        <fire>
+          <bulletRef label="wallsegment"></bulletRef>
+        </fire>
+        <wait>100</wait>
+      </action>
+    </repeat>
+    <action>
+      <accel>
+        <vertical>-1</vertical>
+        <term>5000</term>
+      </accel>
+    </action>
+    <repeat>
+      <times>50</times>
+      <action>
+        <fire>
+          <bulletRef label="wallsegment"></bulletRef>
+        </fire>
+        <wait>100</wait>
+      </action>
+    </repeat>
+  </bullet>
+
+  <action label="createwall">
+    <repeat>
+      <times>1</times>
+      <action>
+        <fire>
+          <bulletRef label="wallspawner"/>
+        </fire>
+      <wait>100</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <action label="testac2">
+    <repeat>
+      <times>50</times>
+      <action>
+        <fire>
+          <speed>10</speed>
+          <bulletRef label="test"/>
+        </fire>
+        <wait>500</wait>
+        </action>
+      </repeat>
+  </action>
+</bulletml>
