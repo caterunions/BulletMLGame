@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+<bulletml>
+  <action label="top1">
+    <actionRef label="createhorizontallines"/>
+  </action>
+
+  <action label="top2">
+    <actionRef label="spawncages"/>
+  </action>
+
+  <action label="top3">
+    <actionRef label="spawnswords"/>
+  </action>
+
+  <bullet label="horizsword">
+    <visuals>knightsword</visuals>
+    <speed>8</speed>
+    <faceHeading></faceHeading>
+    <elem>Phys</elem>
+    <lifetime>6000</lifetime>
+  </bullet>
+
+  <bullet label="rotatingcageCW">
+    <visuals>shootinggallery_rotate</visuals>
+    <elem>Phys</elem>
+    <speed>2</speed>
+    <continuousRotation>90</continuousRotation>
+    <lifetime>20000</lifetime>
+  </bullet>
+
+  <bullet label="rotatingcageCCW">
+    <visuals>shootinggallery_rotate</visuals>
+    <elem>Phys</elem>
+    <speed>2</speed>
+    <continuousRotation>-90</continuousRotation>
+    <lifetime>20000</lifetime>
+  </bullet>
+
+  <bullet label="mainsword">
+    <visuals>knightsword_afterimage</visuals>
+    <faceHeading/>
+    <lifetime>10000</lifetime>
+    <speed>-3</speed>
+    <action>
+      <fire>
+        <bulletRef label="sidesword"></bulletRef>
+        <offsetY type="relative">1.5</offsetY>
+      </fire>
+      <fire>
+        <bulletRef label="sidesword"></bulletRef>
+        <offsetY type="relative">-1.5</offsetY>
+      </fire>
+      <changeSpeed>
+        <speed>0</speed>
+        <term>3000</term>
+      </changeSpeed>
+      <wait>3000</wait>
+      <changeSpeed>
+        <speed>100</speed>
+        <term>250</term>
+      </changeSpeed>
+    </action>
+  </bullet>
+
+  <bullet label="sidesword">
+    <visuals>knightsword_afterimage</visuals>
+    <lifetime>10000</lifetime>
+    <speed>-3</speed>
+    <faceHeading/>
+    <direction type="relative">0</direction>
+    <action>
+    <changeSpeed>
+      <speed>0</speed>
+      <term>3000</term>
+    </changeSpeed>
+    <wait>3000</wait>
+    <changeSpeed>
+      <speed>100</speed>
+      <term>250</term>
+    </changeSpeed>
+  </action>
+  </bullet>
+
+    <action label="spawnswords">
+    <wait>8000</wait>
+    <repeat>
+      <times>99</times>
+      <action>
+        <fire>
+          <bulletRef label="mainsword"/>
+          <offsetX>15</offsetX>
+          <direction type="absolute">-90</direction>
+        </fire>
+        <fire>
+          <bulletRef label="mainsword"/>
+          <offsetX>15</offsetX>
+          <direction type="absolute">-90</direction>
+        </fire>
+        <wait>5000</wait>
+        <fire>
+          <bulletRef label="mainsword"/>
+          <offsetX>15</offsetX>
+          <offsetY>6</offsetY>
+          <direction type="absolute">-90</direction>
+        </fire>
+        <wait>5000</wait>
+        <fire>
+          <bulletRef label="mainsword"/>
+          <offsetX>15</offsetX>
+          <offsetY>-6</offsetY>
+          <direction type="absolute">-90</direction>
+        </fire>
+        <wait>5000</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <action label="createhorizontallines">
+    <repeat>
+      <times>99</times>
+      <action>
+        <repeat>
+          <times>3</times>
+          <action>
+          <fire>
+            <bulletRef label="horizsword"/>
+            <direction type="absolute">90</direction>
+            <offsetY>3</offsetY>
+            <offsetX>-11</offsetX>
+          </fire>
+          <fire>
+            <bulletRef label="horizsword"/>
+            <direction type="absolute">-90</direction>
+            <offsetY>-3</offsetY>
+            <offsetX>11</offsetX>
+          </fire>
+          <wait>500</wait>
+          </action>
+        </repeat>
+        <wait>1100</wait>
+      </action>
+    </repeat>
+  </action>
+
+  <action label="spawncages">
+    <repeat>
+      <times>99</times>
+      <action>
+        <fire>
+          <direction type="absolute">90</direction>
+          <offsetX>-13</offsetX>
+          <bulletRef label="rotatingcageCW"/>
+        </fire>
+        <fire>
+          <direction type="absolute">-90</direction>
+          <offsetX>13</offsetX>
+          <offsetY>6</offsetY>
+          <bulletRef label="rotatingcageCCW"/>
+        </fire>
+        <fire>
+          <direction type="absolute">-90</direction>
+          <offsetX>13</offsetX>
+          <offsetY>-6</offsetY>
+          <bulletRef label="rotatingcageCCW"/>
+        </fire>
+        <wait>3300</wait>
+      </action>
+    </repeat>
+  </action>
+</bulletml>

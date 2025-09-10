@@ -3,7 +3,7 @@ using UnityEngine;
 public enum ElementType
 {
 	Neutral,
-	Physical,
+	Phys,
 	Fire,
 	Ice,
 	Electric,

@@ -115,6 +115,7 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 		{
 			BulletVisuals vis = Instantiate(_battleData.GetVisuals(bullet.Visuals), uBullet.transform);
 			uBullet.Visuals = vis;
+			uBullet.VisualFix();
 			vis.SpriteRenderer.material = _materialBank.GetElementMaterial(bullet.ElementType);
 		}
 

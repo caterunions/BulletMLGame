@@ -28,6 +28,14 @@ public class UnityBullet : MonoBehaviour
 		ElementType = _bullet.ElementType;
 	}
 
+	public void VisualFix()
+	{
+		if (Visuals != null && _bullet.FaceDirection)
+		{
+			Visuals.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * _bullet.VisualDirection) - 180f);
+		}
+	}
+
 	private void Update()
 	{
 		_bullet.Update();

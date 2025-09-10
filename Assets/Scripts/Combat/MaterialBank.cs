@@ -28,7 +28,7 @@ public class MaterialBank : ScriptableObject
 				{
 					return _neutralMaterial;
 				}
-			case ElementType.Physical:
+			case ElementType.Phys:
 				{
 					return _physMaterial;
 				}

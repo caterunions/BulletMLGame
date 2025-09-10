@@ -31,7 +31,7 @@ public class SpawnAfterimages : MonoBehaviour
 		if(_accumulatedDeltaTime >= _timeBetweenSpawns)
 		{
 			_accumulatedDeltaTime -= _timeBetweenSpawns;
-			Afterimage spawn = Instantiate(_afterimagePrefab, transform.position, Quaternion.identity);
+			Afterimage spawn = Instantiate(_afterimagePrefab, transform.position, transform.rotation);
 			spawn.Initialize(_afterimageLifetime, _startOpacity, _endOpacity, _afterimageVelocity, _referencedSpriteRenderer);
 		}
 	}
