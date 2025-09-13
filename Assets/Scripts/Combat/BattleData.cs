@@ -20,7 +20,7 @@ public class BattleData : ScriptableObject
 		BulletVisuals match = _bulletBank.FirstOrDefault(b => b.name == name);
 		if (match != null) return match;
 
-		Debug.LogWarning($"Couldn't find visuals for name: {name}");
+		//Debug.LogWarning($"Couldn't find visuals for name: {name}");
 		return _errorFallbackVisuals;
 	}
 }

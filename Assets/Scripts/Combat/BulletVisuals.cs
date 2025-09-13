@@ -9,6 +9,12 @@ public class BulletVisuals : MonoBehaviour
 
 	private float _startingAlpha = 0;
 
+	[SerializeField]
+	private float _damage = 0;
+	public float Damage => _damage;
+
+	public bool HasHit = false;
+
 	private void OnEnable()
 	{
 		_startingAlpha = _spriteRenderer.color.a;
