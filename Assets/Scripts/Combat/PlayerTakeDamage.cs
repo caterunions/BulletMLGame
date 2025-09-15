@@ -8,10 +8,14 @@ public class PlayerTakeDamage : MonoBehaviour
 
 	[SerializeField]
 	private HealthDamageReceiver _hdr;
+	[SerializeField]
+	private AudioSource _audioSource;
+	[SerializeField]
+	private CameraScreenShake _cameraScreenShake;
 
     private void OnTriggerEnter2D(Collider2D other)
 	{
-		BulletVisuals vis = other.gameObject.GetComponent<BulletVisuals>();
+		BulletVisuals vis = other.gameObject.GetComponentInChildren<BulletVisuals>();
 
 		if (vis == null) return;
 
@@ -19,6 +23,8 @@ public class PlayerTakeDamage : MonoBehaviour
 		{
 			vis.HasHit = true;
 			_hdr.Damage(vis.Damage);
+			_audioSource.Play();
+			_cameraScreenShake.ApplyScreenShake(0.3f, 0.3f);
 			OnBulletHit?.Invoke(this, _hdr, vis);
 			Debug.Log("damage");
 		}
