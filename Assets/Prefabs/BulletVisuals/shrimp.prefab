@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1775332176436726073}
   - component: {fileID: 4113656891339778538}
   m_Layer: 0
-  m_Name: pointy
+  m_Name: shrimp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4375052897995418073, guid: 15b39c83417baab44aed2012429acf6f, type: 3}
+  m_Sprite: {fileID: -8226167373053314775, guid: 15b39c83417baab44aed2012429acf6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

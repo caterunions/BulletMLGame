@@ -14,6 +14,7 @@ public class BulletVisuals : MonoBehaviour
 	public float Damage => _damage;
 
 	public bool HasHit = false;
+	public bool HasGrazed = false;
 
 	private void OnEnable()
 	{

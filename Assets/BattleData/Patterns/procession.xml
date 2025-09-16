@@ -1,4 +1,201 @@
 <?xml version="1.0" ?>
 <bulletml>
-	
+	<action label="top1">
+		<actionRef label="spawnslowshards"/>
+	</action>
+
+	<action label="top2">
+		<actionRef label="spawnfastshards"/>
+	</action>
+
+	<action label="top3">
+		<actionRef label="spawnshrimps"/>
+	</action>
+
+	<bullet label="shard">
+		<direction type="absolute">0</direction>
+		<visuals>shard_afterimage</visuals>
+		<speed>$1</speed>
+		<offsetX>$2 * 1.1</offsetX>
+		<offsetY>9.2</offsetY>
+		<elem>Phys</elem>
+		<lifetime>15000</lifetime>
+	</bullet>
+
+	<bullet label="shrimp">
+		<direction type="absolute">180</direction>
+		<visuals>shrimp</visuals>
+		<speed>2</speed>
+		<sine>
+			<amplitude>0.3</amplitude>
+			<frequency>1</frequency>
+		</sine>
+		<offsetY>$2</offsetY>
+		<offsetX>$1 * 1.2</offsetX>
+		<lifetime>15000</lifetime>
+		<continuousRotation>90</continuousRotation>
+		<elem>Phys</elem>
+	</bullet>
+
+	<action label="spawnslowshards">
+		<repeat>
+			<times>99</times>
+			<action>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>1.5</param> 
+					<!-- x positions-->
+					<param>3</param>
+					<param>2</param>
+					<param>1</param>
+					<param>-2</param>
+					<param>-3</param>
+				</actionRef>
+				<wait>2300</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>1.5</param>
+					<!-- x positions-->
+					<param>-3</param>
+					<param>2</param>
+					<param>0</param>
+					<param>-1</param>
+					<param>-2</param>
+				</actionRef>
+				<wait>2300</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>1.5</param>
+					<!-- x positions-->
+					<param>2</param>
+					<param>1</param>
+					<param>0</param>
+					<param>-1</param>
+					<param>-2</param>
+				</actionRef>
+				<wait>2300</wait>
+			</action>
+		</repeat>
+	</action>
+
+	<action label="spawnfastshards">
+		<wait>4000</wait>
+		<repeat>
+			<times>99</times>
+			<action>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>3.5</param>
+					<!-- x positions-->
+					<param>3</param>
+					<param>2</param>
+					<param>1</param>
+					<param>-2</param>
+					<param>-3</param>
+				</actionRef>
+				<wait>4000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>3.5</param>
+					<!-- x positions-->
+					<param>3</param>
+					<param>2</param>
+					<param>1</param>
+					<param>0</param>
+					<param>-1</param>
+				</actionRef>
+				<wait>4000</wait>
+			</action>
+		</repeat>
+	</action>
+
+	<action label="spawnshrimps">
+		<repeat>
+			<times>999</times>
+			<action>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>-4</param>
+						<param>-10</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>4</param>
+						<param>-10</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>-5</param>
+						<param>-11</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>5</param>
+						<param>-11</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>-6</param>
+						<param>-10</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>6</param>
+						<param>-10</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>-7</param>
+						<param>-11</param>
+					</bulletRef>
+				</fire>
+				<fire>
+					<bulletRef label="shrimp">
+						<param>7</param>
+						<param>-11</param>
+					</bulletRef>
+				</fire>
+				<wait>1000</wait>
+			</action>
+		</repeat>
+	</action>
+
+	<action label="spawnshardwave">
+		<fire>
+			<bulletRef label="shard">
+				<param>$1</param>
+				<param>$2</param>
+			</bulletRef>
+		</fire>
+		<fire>
+			<bulletRef label="shard">
+				<param>$1</param>
+				<param>$3</param>
+			</bulletRef>
+		</fire>
+		<fire>
+			<bulletRef label="shard">
+				<param>$1</param>
+				<param>$4</param>
+			</bulletRef>
+		</fire>
+		<fire>
+			<bulletRef label="shard">
+				<param>$1</param>
+				<param>$5</param>
+			</bulletRef>
+		</fire>
+		<fire>
+			<bulletRef label="shard">
+				<param>$1</param>
+				<param>$6</param>
+			</bulletRef>
+		</fire>
+	</action>
 </bulletml>

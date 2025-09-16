@@ -21,6 +21,7 @@ public class Afterimage : MonoBehaviour
 		_spr.flipX = spr.flipX;
 		_spr.flipY = spr.flipY;
 		_spr.color = spr.color;
+		_spr.material = spr.material;
 	}
 
 	private void Update()

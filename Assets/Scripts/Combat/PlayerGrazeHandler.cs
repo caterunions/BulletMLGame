@@ -23,8 +23,9 @@ public class PlayerGrazeHandler : MonoBehaviour
 
 		if (vis == null) return;
 
-		if (vis.Damage > 0 && !vis.HasHit)
+		if (vis.Damage > 0 && !vis.HasGrazed)
 		{
+			vis.HasGrazed = true;
 			_audioSource.Play();
 			_curFadeTime = _fadeTime;
 			_spr.color = _gradient.Evaluate(0);
