@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 15b39c83417baab44aed2012429acf6f
+guid: 4b4bce2140e0ba946b6c4412c9c8697f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4375052897995418073
-    second: knightbullets_0
-  - first:
-      213: -8226167373053314775
-    second: knightbullets_1
+      213: -7260653897514614210
+    second: knight-idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,133 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knightbullets_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 726907db190b843c0800000000000000
-      internalID: -4375052897995418073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knightbullets_1
+      name: knight-idle_0
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
-        width: 16
-        height: 16
+        y: 14
+        width: 70
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 929bf3abb58c6dd80800000000000000
-      internalID: -8226167373053314775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knightbullets_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdfe7289d64cab149ac55a3e7f110a8b
-      internalID: -629063500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knightbullets_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33aef218f724a5648824fd2b8b9a0a29
-      internalID: -1957285256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knightbullets_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f153d60e814fab4583e108c135ae382
-      internalID: 1223060864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knightbullets_5
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 398bc8ad9dc72fd4faf36a8e304f812d
-      internalID: -2011607258
+      spriteID: e320691bfb9fc3b90800000000000000
+      internalID: -7260653897514614210
       vertices: []
       indices: 
       edges: []
@@ -251,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3e9f27f490ac1e74aa7f8144b7e7ceab
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -261,12 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      knightbullets_0: -4375052897995418073
-      knightbullets_1: -8226167373053314775
-      knightbullets_2: -629063500
-      knightbullets_3: -1957285256
-      knightbullets_4: 1223060864
-      knightbullets_5: -2011607258
+      knight-idle_0: -7260653897514614210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

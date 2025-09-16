@@ -12,6 +12,10 @@
 		<actionRef label="spawnshrimps"/>
 	</action>
 
+	<action label="top4">
+		<actionRef label="knightslashes"/>
+	</action>
+
 	<bullet label="shard">
 		<direction type="absolute">0</direction>
 		<visuals>shard_afterimage</visuals>
@@ -37,13 +41,107 @@
 		<elem>Phys</elem>
 	</bullet>
 
+	<bullet label="wideswoop">
+		<visuals>wideswoop</visuals>
+		<speed>15</speed>
+		<faceHeading/>
+		<lifetime>10000</lifetime>
+		<action>
+			<fire>
+				<bulletRef label="swoop"></bulletRef>
+				<direction type="relative">0</direction>
+			</fire>
+			<changeSpeed>
+				<speed>40</speed>
+				<term>1000</term>
+			</changeSpeed>
+		</action>
+	</bullet>
+
+	<bullet label="swoop">
+		<visuals>swoop</visuals>
+		<speed>10</speed>
+		<faceHeading/>
+		<lifetime>10000</lifetime>
+		<action>
+			<fire>
+				<bulletRef label="smallswoop"></bulletRef>
+				<direction type="relative">0</direction>
+			</fire>
+			<changeSpeed>
+				<speed>34</speed>
+				<term>1000</term>
+			</changeSpeed>
+		</action>
+	</bullet>
+
+	<bullet label="smallswoop">
+		<visuals>smallswoop</visuals>
+		<speed>5</speed>
+		<faceHeading/>
+		<lifetime>10000</lifetime>
+		<action>
+			<changeSpeed>
+				<speed>28</speed>
+				<term>1000</term>
+			</changeSpeed>
+		</action>
+	</bullet>
+
+	<bullet label="mainswoop">
+		<action>
+			<trigger>sfx|snd_knight_cut</trigger>
+			<fire>
+				<bulletRef label="wideswoop"></bulletRef>
+				<direction type="relative">0</direction>
+			</fire>
+			<fire>
+				<bulletRef label="wideswoop"></bulletRef>
+				<direction type="relative">14</direction>
+			</fire>
+			<fire>
+				<bulletRef label="wideswoop"></bulletRef>
+				<direction type="relative">-14</direction>
+			</fire>
+			<vanish/>
+		</action>
+	</bullet>
+
+
+
+	<action label="knightslashes">
+		<wait>7000</wait>
+		<repeat>
+			<times>99</times>
+			<action>
+				<fire>
+					<bulletRef label="mainswoop"></bulletRef>
+					<offsetX>18</offsetX>
+				</fire>
+				<wait>7000</wait>
+				<fire>
+					<bulletRef label="mainswoop"></bulletRef>
+					<offsetX>18</offsetX>
+					<offsetY>6</offsetY>
+				</fire>
+				<wait>7000</wait>
+				<fire>
+					<bulletRef label="mainswoop"></bulletRef>
+					<offsetX>18</offsetX>
+					<offsetY>-6</offsetY>
+				</fire>
+				<wait>7000</wait>
+			</action>
+		</repeat>
+	</action>
+
 	<action label="spawnslowshards">
 		<repeat>
 			<times>99</times>
 			<action>
 				<actionRef label="spawnshardwave">
 					<!-- speed -->
-					<param>1.5</param> 
+					<param>2</param> 
 					<!-- x positions-->
 					<param>3</param>
 					<param>2</param>
@@ -51,10 +149,10 @@
 					<param>-2</param>
 					<param>-3</param>
 				</actionRef>
-				<wait>2300</wait>
+				<wait>2000</wait>
 				<actionRef label="spawnshardwave">
 					<!-- speed -->
-					<param>1.5</param>
+					<param>2</param>
 					<!-- x positions-->
 					<param>-3</param>
 					<param>2</param>
@@ -62,10 +160,10 @@
 					<param>-1</param>
 					<param>-2</param>
 				</actionRef>
-				<wait>2300</wait>
+				<wait>2000</wait>
 				<actionRef label="spawnshardwave">
 					<!-- speed -->
-					<param>1.5</param>
+					<param>2</param>
 					<!-- x positions-->
 					<param>2</param>
 					<param>1</param>
@@ -73,7 +171,40 @@
 					<param>-1</param>
 					<param>-2</param>
 				</actionRef>
-				<wait>2300</wait>
+				<wait>2000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>2</param> 
+					<!-- x positions-->
+					<param>3</param>
+					<param>-1</param>
+					<param>1</param>
+					<param>-2</param>
+					<param>-3</param>
+				</actionRef>
+				<wait>2000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>2</param> 
+					<!-- x positions-->
+					<param>3</param>
+					<param>0</param>
+					<param>1</param>
+					<param>-2</param>
+					<param>2</param>
+				</actionRef>
+				<wait>2000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>2</param> 
+					<!-- x positions-->
+					<param>2</param>
+					<param>-1</param>
+					<param>1</param>
+					<param>0</param>
+					<param>-3</param>
+				</actionRef>
+				<wait>2000</wait>
 			</action>
 		</repeat>
 	</action>
@@ -103,6 +234,28 @@
 					<param>1</param>
 					<param>0</param>
 					<param>-1</param>
+				</actionRef>
+				<wait>4000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>3.5</param>
+					<!-- x positions-->
+					<param>-1</param>
+					<param>2</param>
+					<param>1</param>
+					<param>0</param>
+					<param>-3</param>
+				</actionRef>
+				<wait>4000</wait>
+				<actionRef label="spawnshardwave">
+					<!-- speed -->
+					<param>3.5</param>
+					<!-- x positions-->
+					<param>-1</param>
+					<param>3</param>
+					<param>1</param>
+					<param>2</param>
+					<param>-3</param>
 				</actionRef>
 				<wait>4000</wait>
 			</action>

@@ -42,6 +42,7 @@
     <lifetime>10000</lifetime>
     <speed>-3</speed>
     <action>
+      <trigger>sfx|snd_knight_jump_quick</trigger>
       <fire>
         <bulletRef label="sidesword"></bulletRef>
         <offsetY type="relative">1.5</offsetY>
@@ -55,6 +56,7 @@
         <term>3000</term>
       </changeSpeed>
       <wait>3000</wait>
+      <trigger>sfx|snd_swing</trigger>
       <changeSpeed>
         <speed>100</speed>
         <term>250</term>
@@ -86,11 +88,6 @@
     <repeat>
       <times>99</times>
       <action>
-        <fire>
-          <bulletRef label="mainsword"/>
-          <offsetX>15</offsetX>
-          <direction type="absolute">-90</direction>
-        </fire>
         <fire>
           <bulletRef label="mainsword"/>
           <offsetX>15</offsetX>

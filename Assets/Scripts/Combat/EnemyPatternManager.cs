@@ -10,6 +10,9 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 	[SerializeField]
 	private UnityBullet _bulletPrefab;
 
+	[SerializeField]
+	private BulletSoundPlayer _soundPlayer;
+
 	private Dictionary<Bullet, UnityBullet> _bullets = new Dictionary<Bullet, UnityBullet>();
 
 	private BulletPattern Pattern
@@ -102,7 +105,14 @@ public class EnemyPatternManager : MonoBehaviour, IBulletManager
 
 	public void Trigger(Bullet source, string name)
 	{
-		throw new System.NotImplementedException();
+		string[] parameters = name.Split('|');
+
+		if (parameters.Length == 0) return;
+
+		if (parameters[0] == "sfx")
+		{
+			_soundPlayer.PlaySound(parameters[1]);
+		}
 	}
 
 	public void InitializeUnityBullet(Bullet bullet)
