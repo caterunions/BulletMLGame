@@ -49,6 +49,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1775332176436726073}
   _damage: 20
   HasHit: 0
+  HasGrazed: 0
 --- !u!212 &1775332176436726073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -139,4 +140,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.45
+  m_Radius: 0.9
